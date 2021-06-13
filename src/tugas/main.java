@@ -497,9 +497,15 @@ public class main extends javax.swing.JFrame {
                    
            });
        }
-                   
                }
                
+                else if(Choose.equals("Berat Barang") || Choose.equals("berat barang")){
+                    JOptionPane.showMessageDialog(null, "Berat Barang Tidak Dapat Diubah!");
+                }
+               
+                else if(Choose.equals("total") || Choose.equals("Total") || Choose.equals("TOTAL")){
+                    JOptionPane.showMessageDialog(null,"Total Tidak Dapat Diubah!");
+                }
            }
            
            else{
