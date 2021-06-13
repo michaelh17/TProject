@@ -284,6 +284,7 @@ public class main extends javax.swing.JFrame {
        int total;
        int ppn;
        int hasil;
+
        
        if(berat > 10){
            total = berat * 2500;
@@ -301,7 +302,8 @@ public class main extends javax.swing.JFrame {
            jtotal.setText(String.valueOf(total));
            receive.setText(String.valueOf(hasil));
        }
-          
+
+       
        String db = "insert into datatables values (?,?,?,?)";
             try{
              PreparedStatement statement = cons.prepareStatement(db);
@@ -312,11 +314,15 @@ public class main extends javax.swing.JFrame {
           
               statement.executeUpdate();
               JOptionPane.showMessageDialog(null,"BERHASIL!");
-
-                 
+              
+              nama.setText(null);
+              nohp.setText(null);
+              beratbarang.setText(null);
+              jtotal.setText(null);
+              receive.setText(null);
         }
            catch (Exception E){
-           JOptionPane.showMessageDialog(null, "GAGAL!");
+           JOptionPane.showMessageDialog(null, "TERJADI SEBUAH KESALAHAN!!");
            }
        
      
@@ -385,6 +391,9 @@ public class main extends javax.swing.JFrame {
            });
        }
                
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Data Tidak Ditemukan!");
            }
         }
         
